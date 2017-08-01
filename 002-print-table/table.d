@@ -16,7 +16,7 @@ auto maxWidths( string[] header, string[][] rows ){
   return r.map!"a.length".array;
  }
  return fold!( 
-	(ulong[] acc, string[] row)=>zip( acc, lengths(row) ).map!( t=>max( t[0], t[1]) )  
+	(ulong[] acc, string[] row)=>zip( acc, lengths(row) ).map!( t=>max( t[0], t[1]) ).array  
   )( rows, lengths(header) );
 }
 
@@ -27,7 +27,7 @@ auto renderSeparator(T1)(T1 widths){
   return "|" ~ pieces.join("+") ~ "|";
 }
 
-auto pad( string s, int length){
+string pad( string s, ulong length){
   return " " ~ s ~ " ".repeat( length - s.length + 1 ).join;
 }
 
@@ -44,7 +44,8 @@ auto renderTable(T1,T2)(T1 header, T2 rows){
   auto widths1 = maxWidths( header, rows);
   return only( 
 	renderRow( header, widths1 ),
-	renderSeparator( widths1),
+	renderSeparator( widths1)
+  ).chain(
 	rows.map!( row=>renderRow(row,widths1) )
   ).join("\n");
 }
