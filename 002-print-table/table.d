@@ -1,6 +1,5 @@
 import std.stdio, std.range, std.array, std.string, std.regex, std.algorithm;
 
-
 void main( string[] args )
 {
   auto rr = [
