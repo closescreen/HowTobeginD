@@ -1,0 +1,9 @@
+{
+	"name": "browser01",
+	"authors": [
+		"Дмитрий"
+	],
+	"description": "A minimal D application.",
+	"copyright": "Copyright © 2017, Дмитрий",
+	"license": "proprietary"
+}

@@ -1,0 +1,12 @@
+{
+	"name": "myvibed1",
+	"authors": [
+		"Дмитрий"
+	],
+	"dependencies": {
+		"vibe-d": "~>0.7.31"
+	},
+	"description": "A simple vibe.d server application.",
+	"copyright": "Copyright © 2017, Дмитрий",
+	"license": "proprietary"
+}
